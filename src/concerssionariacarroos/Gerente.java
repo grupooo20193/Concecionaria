@@ -2,52 +2,28 @@
 package concerssionariacarroos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario{
     
-    private ArrayList<Carro> carros;
-    
-    public Gerente(){
-        carros = new ArrayList<Carro>();
+     public Gerente(String nomeFumcionario, String loginUsuario, String Cargo) {
+        super(nomeFumcionario,loginUsuario,Cargo);
     }
     
+      public Gerente leGerente(){
+        Scanner teclado = new Scanner(System.in);
+        String nomeFuncionario;
+        String loginUsuario;
+        String cargo;
     
-    public void criaCarro(Carro carro){
-        carros.add(carro);
-    }
-    
-    public int quantidadeCarros(){
-        return carros.size();
-    }
-    
-    public void editaCarro(){
+        System.out.print("Digite o nome do gerente ");
+        nomeFuncionario = teclado.nextLine();
+        System.out.print("Informe o seu login ");
+        loginUsuario = teclado.nextLine();
+        System.out.println("Digite o cargo");
+        cargo = teclado.nextLine();
         
+         return new Gerente(nomeFuncionario,loginUsuario,cargo);
     }
-    
-    public void deletaCarro(Carro carro){
-        carros.remove(carro);
-    }
-    
-    public Carro getCarro(int posicao){
-        return carros.get(posicao);
-    }
-    
-    public void criaGerente(){
-        
-    }
-    
-    public void editaGerente(){
-        
-    }
-    
-    public void deletaGerente(){
-        
-    }
-    
-    
-     /*public int buscaId(){
-        
-    }*/
-    
 }

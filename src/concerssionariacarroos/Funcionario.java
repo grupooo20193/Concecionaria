@@ -9,11 +9,21 @@ package concerssionariacarroos;
  *
  * @author miche
  */
-public class Funcionario {
+public abstract class Funcionario {
     private int idFuncionario;
     private String nomeFuncionario;
-    private String usuarioFuncionario;
-    private String senhaFuncionario;
+    private String loginUsuario;
+    private String cargo;
+   
+    
+    
+    public Funcionario(){}
+    
+     public  Funcionario(String nomeFumcionario, String loginUsuario, String Cargo){
+        this.nomeFuncionario = nomeFumcionario;
+        this.loginUsuario = loginUsuario;
+        this.cargo = cargo;
+    }
 
     /**
      * @return the idFuncionario
@@ -44,31 +54,18 @@ public class Funcionario {
     }
 
     /**
-     * @return the usuarioFuncionario
+     * @return the loginUsuario
      */
-    public String getUsuarioFuncionario() {
-        return usuarioFuncionario;
+    public String getLoginUsuario() {
+        return loginUsuario;
     }
 
     /**
-     * @param usuarioFuncionario the usuarioFuncionario to set
+     * @param loginUsuario the loginUsuario to set
      */
-    public void setUsuarioFuncionario(String usuarioFuncionario) {
-        this.usuarioFuncionario = usuarioFuncionario;
+    public void setLoginUsuario(String loginUsuario) {
+        this.loginUsuario = loginUsuario;
     }
 
-    /**
-     * @return the senhaFuncionario
-     */
-    public String getSenhaFuncionario() {
-        return senhaFuncionario;
-    }
-
-    /**
-     * @param senhaFuncionario the senhaFuncionario to set
-     */
-    public void setSenhaFuncionario(String senhaFuncionario) {
-        this.senhaFuncionario = senhaFuncionario;
-    }
-    
+     
 }

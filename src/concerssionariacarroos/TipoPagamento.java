@@ -5,41 +5,20 @@
  */
 package concerssionariacarroos;
 
+import java.util.Date;
+
 /**
  *
  * @author miche
  */
-public class TipoPagamento {
-    private int idTipoPagamento;
-    private String nomeTipoPagamento;
-
-    /**
-     * @return the idTipoPagamento
-     */
-    public int getIdTipoPagamento() {
-        return idTipoPagamento;
-    }
-
-    /**
-     * @param idTipoPagamento the idTipoPagamento to set
-     */
-    public void setIdTipoPagamento(int idTipoPagamento) {
-        this.idTipoPagamento = idTipoPagamento;
-    }
-
-    /**
-     * @return the nomeTipoPagamento
-     */
-    public String getNomeTipoPagamento() {
-        return nomeTipoPagamento;
-    }
-
-    /**
-     * @param nomeTipoPagamento the nomeTipoPagamento to set
-     */
-    public void setNomeTipoPagamento(String nomeTipoPagamento) {
-        this.nomeTipoPagamento = nomeTipoPagamento;
-    }
+public class TipoPagamento extends Pagamento {
+  public TipoPagamento(Date dataPagamento) {
+        super(dataPagamento);
+     }
     
-    
+    //implementar a forma de pagamento 
+    public Pagamento FormaPagamento(){
+       return null;
+    }  
+ 
 }

@@ -16,51 +16,7 @@ import java.util.ArrayList;
  */
 public class Venda {
     //walkiria
-    private int idVendas;
-    private Cliente cliente;
-    private Vendedor vendedor;
-    private ArrayList<Carro> carros;
-    
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public Vendedor getVendedor() {
-        return vendedor;
-    }
-
-    public void setVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
-    }
-    
-    public Venda(){
-        carros = new ArrayList<Carro>();
-    }
-    
-    
-    public void criaCarro(Carro carro){
-        carros.add(carro);
-    }
-    
-    public int quantidadeCarros(){
-        return carros.size();
-    }
-    
-    public void deletaCarro(Carro carro){
-        carros.remove(carro);
-    }
-    
-    public Carro getCarro(int posicao){
-        return carros.get(posicao);
-    }
-    
-
-    //walkiria
+   private int idVendas;
 
     /**
      * @return the idVendas
@@ -76,21 +32,13 @@ public class Venda {
         this.idVendas = idVendas;
     }
     
-   
-    
-    public void adicionarVenda(){
+    public class Cliente extends Venda{
         
     }
     
-    public void editarVenda(){
+    public class Vendedor extends Venda{
         
     }
     
-    public void deletarVenda(){
-        
-    }
-    
-    public void listarVenda(){
-        
-    }
+   //os metodos alterar, editar que seram feitos na tela da interface por isso retirei
 }

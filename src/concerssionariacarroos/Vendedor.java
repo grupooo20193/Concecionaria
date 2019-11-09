@@ -2,37 +2,28 @@
 package concerssionariacarroos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Vendedor extends Funcionario {
     
-    private ArrayList<Venda> vendas;
-    
-    public Vendedor(){
-        vendas = new ArrayList<Venda>();
+   public Vendedor(String nomeFumcionario, String loginUsuario, String Cargo) {
+        super(nomeFumcionario,loginUsuario,Cargo);
     }
     
-    public void criaVenda(Venda venda){
-        vendas.add(venda);
-    }
+      public Vendedor leVendedor(){
+        Scanner teclado = new Scanner(System.in);
+        String nomeFuncionario;
+        String loginUsuario;
+        String cargo;
     
-    public int quantidadeVendas(){
-        return vendas.size();
-    }
-    
-    public void editaVenda(){
+        System.out.print("Digite o nome do gerente ");
+        nomeFuncionario = teclado.nextLine();
+        System.out.print("Informe o seu login ");
+        loginUsuario = teclado.nextLine();
+        System.out.println("Digite o cargo");
+        cargo = teclado.nextLine();
         
-    }
-    
-    public void deletaVenda(Venda venda){
-        vendas.remove(venda);
-    }
-    
-    public Venda getVenda(int posicao){
-        return vendas.get(posicao);
-    }
-    
-    public int buscaId(){
-        return 0;
+         return new Vendedor(nomeFuncionario,loginUsuario,cargo);
     }
 }

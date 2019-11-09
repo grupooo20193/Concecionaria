@@ -5,12 +5,14 @@
  */
 package concerssionariacarroos;
 
+import java.util.Scanner;
+
 /**
  *
  * @author miche
  */
 public class Cliente {
-    private int idCliente;
+  private int idCliente;
     private String nomeCliente;
     private String telefoneCliente;
     private String enderecoCliente;
@@ -127,20 +129,9 @@ public class Cliente {
         this.cepCliente = cepCliente;
     }
     
-    
-    public void adicionarCliente(){
-        
-    }
-    
-    public void editarClinte(){
-        
-    }
-    
-    public void deletarCliente(){
-        
-    }
-    
-    /*private int buscaId(){
-    }*/
+    //os metodos alterar, editar que seram feitos na tela da interface por isso retirei
+    // por isso preciso da tela de cadastro do cliente
+    // retirei tambem a busca por id vai dar muito trabalho
 }
+
 

@@ -12,8 +12,17 @@ import java.util.Date;
  * @author miche
  */
 public class Pagamento {
-    private int idPagamento;
+ private int idPagamento;
     private Date dataPagamento;
+    
+    
+     public Pagamento(){}
+    
+     public  Pagamento(Date dataPagamento){
+        this.dataPagamento = dataPagamento;
+        
+    }
+    
 
     /**
      * @return the idPagamento
@@ -42,20 +51,5 @@ public class Pagamento {
     public void setDataPagamento(Date dataPagamento) {
         this.dataPagamento = dataPagamento;
     }
-    
-    public void adicionaPagamento(){
-        
-    }
-    
-    public void editarPagamento(){
-        
-    }
-    
-    public void deletaPagamento(){
-        
-    }
-    
-    /*public int buscaId(){
-        
-    }*/
 }
+
