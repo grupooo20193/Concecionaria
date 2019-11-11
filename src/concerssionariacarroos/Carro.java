@@ -6,8 +6,7 @@
 
 package concerssionariacarroos;
 
-import java.math.BigDecimal;
-import java.util.Scanner;
+import java.io.File;
 
 /**
  *
@@ -18,7 +17,8 @@ public class Carro {
     private String marcaCarro;
     private String modeloCarro;
     private String anoCarro;
-    private BigDecimal valorCarro;
+    private float valorCarro;
+    private File imagem;
 
     public Carro(){}
     
@@ -81,18 +81,18 @@ public class Carro {
     /**
      * @return the valorCarro
      */
-    public BigDecimal getValorCarro() {
+    public float getValorCarro() {
         return valorCarro;
     }
 
     /**
      * @param valorCarro the valorCarro to set
      */
-    public void setValorCarro(BigDecimal valorCarro) {
-        this.valorCarro = valorCarro;
+    public void setValorCarro(float valorCarro) {
+        this.setValorCarro(valorCarro);
     }
     
-     public Carro(int idCarro,String marcaCarro,String anoCarro, String modeloCarro, BigDecimal valorCarro){
+     public Carro(int idCarro,String marcaCarro,String anoCarro, String modeloCarro, float valorCarro){
         super();
         this.idCarro = idCarro;
         this.marcaCarro = marcaCarro;
@@ -105,7 +105,18 @@ public class Carro {
      //os metodos alterar, editar seram feitos na tela da interface por isso retirei
     // por isso preciso da tela de cadastro de carro
     // retirei tambem a busca por id vai dar muito trabalho
+
+    /**
+     * @return the imagem
+     */
+    public File getImagem() {
+        return imagem;
+    }
+
+    /**
+     * @param imagem the imagem to set
+     */
+    public void setImagem(File imagem) {
+        this.imagem = imagem;
+    }
 }
-
-    
-

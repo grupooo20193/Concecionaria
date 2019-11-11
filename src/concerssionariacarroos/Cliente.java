@@ -5,11 +5,9 @@
  */
 package concerssionariacarroos;
 
-import java.util.Scanner;
-
 /**
  *
- * @author miche
+ * @author michel
  */
 public class Cliente {
   private int idCliente;

@@ -5,6 +5,9 @@
  */
 package concerssionariacarroos;
 
+import telas.TelaGerente;
+import telas.TelaLogin;
+
 /**
  *
  * @author miche
@@ -20,6 +23,9 @@ package concerssionariacarroos;
         
         //implementar as funçoes de chamada da "INTERFACE" 
     
+         TelaLogin TelaLogin = new TelaLogin();
+         TelaLogin.setVisible(true);
+         TelaLogin.setResizable(false);
        
         
     }
