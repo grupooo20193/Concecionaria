@@ -50,18 +50,10 @@ public class Vendedor extends Funcionario {
     }
    
 
-      public void leVendedor(){
-        Scanner teclado = new Scanner(System.in);
-        String nomeFuncionario;
-        String loginUsuario;
-        String cargo;
-    
-        System.out.print("Digite o nome do gerente ");
-        nomeFuncionario = teclado.nextLine();
-        System.out.print("Informe o seu login ");
-        loginUsuario = teclado.nextLine();
-        System.out.println("Digite o cargo");
-        cargo = teclado.nextLine();
-        
-    } 
+      public void retornaFuncionarios(){
+        for(int i=0; i < bancoDeDadosFuncionario.quantidadeVendedores(); i++){
+            System.out.println(bancoDeDadosFuncionario.getVendedores(i).getNomeFuncionario());
+            System.out.println("");
+        }
+    }
 }

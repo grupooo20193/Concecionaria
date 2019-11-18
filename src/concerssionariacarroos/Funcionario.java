@@ -1,6 +1,8 @@
 
 package concerssionariacarroos;
 
+import java.util.Scanner;
+
 
 public class Funcionario {
      
@@ -8,6 +10,8 @@ public class Funcionario {
     private String nomeFuncionario;
     private String usuarioFuncionario;
     private String senhaFuncionario;
+    BancoDeDadosFuncionario bancoDeDadosFuncionario = new BancoDeDadosFuncionario();
+    
     
 
     public int getIdFuncionario() {
@@ -43,5 +47,13 @@ public class Funcionario {
     }
 
     
+    
+    public void retornaFuncionarios(){
+        for(int i=0; i < bancoDeDadosFuncionario.quantidadeVendedores(); i++){
+            System.out.println(bancoDeDadosFuncionario.getVendedores(i).getNomeFuncionario());
+            System.out.println("");
+        }
+        System.out.println(bancoDeDadosFuncionario.getGerente());
+    }  
      
 }
