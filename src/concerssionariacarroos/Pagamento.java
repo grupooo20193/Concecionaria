@@ -1,55 +1,50 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package concerssionariacarroos;
 
 import java.util.Date;
 
-/**
- *
- * @author miche
- */
-public class Pagamento {
- private int idPagamento;
+public abstract class Pagamento {
+    private int idPagamento;
     private Date dataPagamento;
-    
-    
-     public Pagamento(){}
-    
-     public  Pagamento(Date dataPagamento){
-        this.dataPagamento = dataPagamento;
-        
-    }
-    
+    private Venda venda;
 
-    /**
-     * @return the idPagamento
-     */
     public int getIdPagamento() {
         return idPagamento;
     }
 
-    /**
-     * @param idPagamento the idPagamento to set
-     */
     public void setIdPagamento(int idPagamento) {
         this.idPagamento = idPagamento;
     }
 
-    /**
-     * @return the dataPagamento
-     */
     public Date getDataPagamento() {
         return dataPagamento;
     }
 
-    /**
-     * @param dataPagamento the dataPagamento to set
-     */
     public void setDataPagamento(Date dataPagamento) {
         this.dataPagamento = dataPagamento;
     }
+
+    public Venda getVenda() {
+        return venda;
+    }
+
+    public void setVenda(Venda venda) {
+        this.venda = venda;
+    }
+
+    public Pagamento() {
+    }
+
+    public Pagamento(int idPagamento, Date dataPagamento, Venda venda) {
+        this.idPagamento = idPagamento;
+        this.dataPagamento = dataPagamento;
+        this.venda = venda;
+    }
+    
+    public abstract float CalcularValor();
+    
 }
+    
+
+   
 

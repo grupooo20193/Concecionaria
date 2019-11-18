@@ -4,41 +4,59 @@ package concerssionariacarroos;
 import concerssionariacarroos.Cliente;
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author miche
- */
 public class Venda {
-    //walkiria
-   private int idVendas;
+    private int idVendas;
+    private Cliente cliente;
+    private Vendedor vendedor;
+    private Carro carro;
+    private Pagamento pagamento;
 
-    /**
-     * @return the idVendas
-     */
+    public Venda(int idVendas, Cliente cliente, Vendedor vendedor, Carro carro, Pagamento pagamento) {
+        this.idVendas = idVendas;
+        this.cliente = cliente;
+        this.vendedor = vendedor;
+        this.carro = carro;
+        this.pagamento = pagamento;
+    }
+
     public int getIdVendas() {
         return idVendas;
     }
 
-    /**
-     * @param idVendas the idVendas to set
-     */
     public void setIdVendas(int idVendas) {
         this.idVendas = idVendas;
     }
-    
-    public class Cliente extends Venda{
-        
+
+    public Cliente getCliente() {
+        return cliente;
     }
-    
-    public class Vendedor extends Venda{
-        
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
-    
-   //os metodos alterar, editar que seram feitos na tela da interface por isso retirei
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public Carro getCarro() {
+        return carro;
+    }
+
+    public void setCarro(Carro carro) {
+        this.carro = carro;
+    }
+
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+   
 }
