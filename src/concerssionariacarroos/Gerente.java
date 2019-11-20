@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Gerente extends Funcionario {
 
     private BancoDeDadosFuncionario funcionarios = new BancoDeDadosFuncionario();
-    private  BancoDeDadosCarros carros = new BancoDeDadosCarros();
+    private  ModelosCarros carros = new ModelosCarros();
 
     public void adicionaCarro(Carro carro) {
-        carros.adicionaCarro(carro);
+        
     }
 
     public int quantidadeCarros() {

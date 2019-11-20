@@ -6,23 +6,29 @@
 package telas;
 
 import controle.ControleLogin;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author fabricioguidine
  */
-public class TelaLogin extends javax.swing.JFrame {
+public class TelaLoginGerencia extends javax.swing.JFrame {
     
     private ControleLogin cl = new ControleLogin();
     
+    JFrame telaAnterior;
     /**
      * Creates new form login
      */
-    public TelaLogin() {
+    private TelaLoginGerencia() {
         initComponents();
     }
-
+    
+    public TelaLoginGerencia(JFrame telaAnterior){
+        this();
+        this.telaAnterior = telaAnterior;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,10 +38,10 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelEsqueciSenha = new javax.swing.JLabel();
+        Cancelar = new javax.swing.JLabel();
         labelEntrar = new javax.swing.JLabel();
-        botaoEsqueciSenha = new javax.swing.JButton();
-        botaoEntrar = new javax.swing.JButton();
+        Entrar = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
         labelAjuda = new javax.swing.JLabel();
         botaoAjuda = new javax.swing.JButton();
         campoUsuario = new javax.swing.JTextField();
@@ -52,38 +58,37 @@ public class TelaLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelEsqueciSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labelEsqueciSenha.setText("Esqueci minha senha!");
-        getContentPane().add(labelEsqueciSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, 50));
+        Cancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Cancelar.setText("Cancelar");
+        getContentPane().add(Cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 70, 50));
 
         labelEntrar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelEntrar.setText("Entrar");
-        getContentPane().add(labelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 60, 50));
+        getContentPane().add(labelEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 60, 50));
 
-        botaoEsqueciSenha.setForeground(new java.awt.Color(255, 153, 153));
-        botaoEsqueciSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/form.png"))); // NOI18N
-        botaoEsqueciSenha.setActionCommand("");
-        botaoEsqueciSenha.setBorder(null);
-        botaoEsqueciSenha.setBorderPainted(false);
-        botaoEsqueciSenha.setContentAreaFilled(false);
-        botaoEsqueciSenha.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        botaoEsqueciSenha.addActionListener(new java.awt.event.ActionListener() {
+        Entrar.setForeground(new java.awt.Color(255, 153, 153));
+        Entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/form.png"))); // NOI18N
+        Entrar.setBorder(null);
+        Entrar.setBorderPainted(false);
+        Entrar.setContentAreaFilled(false);
+        Entrar.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        Entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoEsqueciSenhaActionPerformed(evt);
+                EntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoEsqueciSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 320, 70));
+        getContentPane().add(Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 320, 70));
 
-        botaoEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/entrar.png"))); // NOI18N
-        botaoEntrar.setBorder(null);
-        botaoEntrar.setBorderPainted(false);
-        botaoEntrar.setContentAreaFilled(false);
-        botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
+        cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/entrar.png"))); // NOI18N
+        cancelar.setBorder(null);
+        cancelar.setBorderPainted(false);
+        cancelar.setContentAreaFilled(false);
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoEntrarActionPerformed(evt);
+                cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(botaoEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 230, -1));
+        getContentPane().add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 230, -1));
 
         labelAjuda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelAjuda.setText("Ajuda");
@@ -94,7 +99,6 @@ public class TelaLogin extends javax.swing.JFrame {
         botaoAjuda.setBorder(null);
         botaoAjuda.setBorderPainted(false);
         botaoAjuda.setContentAreaFilled(false);
-        botaoAjuda.setOpaque(false);
         getContentPane().add(botaoAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 230, -1));
 
         campoUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -147,25 +151,28 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoUsuarioActionPerformed
 
-    private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // Botão salvar foi pressionado:
-       
-       String usuario = this.campoUsuario.getText().trim();
-       String senha = this.campoSenha.getText().trim();
-       
-       if(cl.VerificaLogin(usuario, senha) == true){
-            telaPrincipal tp = new telaPrincipal(this);
-            tp.setVisible(true);
-            this.dispose();
+        telaAnterior.setEnabled(true);
+        this.dispose();
+      
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarActionPerformed
+        // TODO add your handling code here:
+        String usuario = this.campoUsuario.getText().trim();
+        String senha = this.campoSenha.getText().trim();
+        if(cl.VerificaLogin(usuario, senha) == true){
+            telaGerencia tg = new telaGerencia(this);
+            tg.setVisible(true);
+            tg.setSize(800, 600);
+            tg.setResizable(false);
+            this.setEnabled(false);
        } 
        else{
            JOptionPane.showMessageDialog(null, "Login incorreto!");
        }
-    }//GEN-LAST:event_botaoEntrarActionPerformed
-
-    private void botaoEsqueciSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEsqueciSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoEsqueciSenhaActionPerformed
+    }//GEN-LAST:event_EntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,34 +191,36 @@ public class TelaLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginGerencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginGerencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginGerencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginGerencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin().setVisible(true);
+                new TelaLoginGerencia().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Cancelar;
+    private javax.swing.JButton Entrar;
     private javax.swing.JButton botaoAjuda;
-    private javax.swing.JButton botaoEntrar;
-    private javax.swing.JButton botaoEsqueciSenha;
     private javax.swing.JTextField campoSenha;
     private javax.swing.JTextField campoUsuario;
+    private javax.swing.JButton cancelar;
     private javax.swing.JLabel labelAjuda;
     private javax.swing.JLabel labelEntrar;
-    private javax.swing.JLabel labelEsqueciSenha;
     private javax.swing.JLabel labelFundo;
     private javax.swing.JLabel labelFundo2;
     private javax.swing.JLabel labelFundoIcone;
