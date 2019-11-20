@@ -13,7 +13,7 @@ import telas.TelaLogin;
  * @author miche
  */
 
- public class ConcerssionariaCarrOOs {
+ public class ConcessionariaCarrOOs {
     /**
      * @param args the command line arguments
      */
