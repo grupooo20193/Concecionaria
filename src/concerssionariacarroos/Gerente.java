@@ -1,29 +1,41 @@
-
 package concerssionariacarroos;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+public class Gerente extends Funcionario {
 
-public class Gerente extends Funcionario{
-    
-     public Gerente(String nomeFumcionario, String loginUsuario, String Cargo) {
-        super(nomeFumcionario,loginUsuario,Cargo);
+    private BancoDeDadosFuncionario funcionarios = new BancoDeDadosFuncionario();
+    private  BancoDeDadosCarros carros = new BancoDeDadosCarros();
+
+    public void adicionaCarro(Carro carro) {
+        carros.adicionaCarro(carro);
     }
+
+    public int quantidadeCarros() {
+        return carros.quantidadeCarros();
+    }
+
+    public void deletaCarro(Carro carro) {
+        carros.deletaCarro(carro);
+    }
+
+    public void adicionaVendedor(Vendedor vendedor) {
+        funcionarios.adicionaFuncionario(vendedor);
+    }
+
+    public int quantidadeVendedores() {
+        return funcionarios.quantidadeVendedores();
+    }
+
+    public void deletaVendedor(Vendedor vendedor) {
+        funcionarios.deletaVendedor(vendedor);
+    }
+
     
-      public Gerente leGerente(){
-        Scanner teclado = new Scanner(System.in);
-        String nomeFuncionario;
-        String loginUsuario;
-        String cargo;
     
-        System.out.print("Digite o nome do gerente ");
-        nomeFuncionario = teclado.nextLine();
-        System.out.print("Informe o seu login ");
-        loginUsuario = teclado.nextLine();
-        System.out.println("Digite o cargo");
-        cargo = teclado.nextLine();
+    public void retornaFuncionarios(){
         
-         return new Gerente(nomeFuncionario,loginUsuario,cargo);
+        System.out.println(funcionarios.getGerente());
     }
 }
