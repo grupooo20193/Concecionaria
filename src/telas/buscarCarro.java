@@ -374,9 +374,9 @@ public class buscarCarro extends javax.swing.JFrame {
         // TODO add your handling code here:
         int rows = jTable1.getRowCount();
         
-        for (int i = rows -1; i >= 0; i--) {
-            jTable1.remove;
-        }
+        do{
+            model.removeRow(0);
+        }while(jTable1.getRowCount()>0);
      //   jTable1.removeAll();
     }//GEN-LAST:event_botaoLimparActionPerformed
 
