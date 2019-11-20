@@ -187,7 +187,7 @@ JFrame telaAnterior;
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-       // cCarro.novoCarro(marcaCarro, modeloCarro, anoCarro, TOP_ALIGNMENT);
+        cCarro.novoCarro();
         JOptionPane.showMessageDialog(null, "Concluido");
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed

@@ -6,6 +6,7 @@
 package controle;
 
 import concerssionariacarroos.Carro;
+import concerssionariacarroos.Estoque;
 import concerssionariacarroos.ModelosCarros;
 import static java.lang.System.exit;
 import java.util.ArrayList;
@@ -22,10 +23,13 @@ public class ControleCarro {
     String anoCarro;
     float valorCarro;
     ModelosCarros modeloscarros;
+    private Estoque estoque = new Estoque();;
     
     public ControleCarro(){
         modeloscarros = new ModelosCarros();
         erros = new ArrayList<>();
+        
+        
     }
     public ControleCarro(String marcaCarro, String modeloCarro, String anoCarro, float valorCarro){
         this.c = new Carro();
@@ -35,6 +39,7 @@ public class ControleCarro {
         this.modeloCarro = modeloCarro;
         this.anoCarro = anoCarro;
         this.valorCarro = valorCarro;
+        
         
     }
 
@@ -79,11 +84,13 @@ public class ControleCarro {
         return modelos;
     }
     
-    public void novoCarro(String marcaCarro, String modeloCarro, String anoCarro, float valorCarro){
+    public void novoCarro(){
         c.setMarcaCarro(marcaCarro);
         c.setModeloCarro(modeloCarro);
         c.setAnoCarro(anoCarro);
         c.setValorCarro(valorCarro);
+        estoque.getEstoque().add(c);
+        
         
         
     }
@@ -136,6 +143,14 @@ public class ControleCarro {
      */
     public ArrayList<String> getErros() {
         return erros;
+    }
+
+    /**
+     * @return the estoque
+     */
+    public Estoque getEstoque() {
+        System.out.println("pegou estoque");
+        return estoque;
     }
     
    
