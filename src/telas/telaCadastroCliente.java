@@ -313,12 +313,8 @@ public class telaCadastroCliente extends javax.swing.JFrame {
         ControleCliente cCliente = new ControleCliente(identificacao, telefone, celular, endereco, documento, cidade, documento, documento, opcao);
         if(cCliente.verificaInfo() != true)JOptionPane.showMessageDialog(null, "ERRO");
         else {
-//            JOptionPane.showMessageDialog(null, "OK");
-//            telaAnterior.getLugar().setLayout(new BorderLayout());
-            //telaAnterior.getLugar().add(new JScrollPane(new clienteInfo(cCliente)),BorderLayout.CENTER);
-            telaAnterior.getLugar().setVisible(true);
-            telaAnterior.getLugar().add(new JLabel("Teste"));
-            
+            JOptionPane.showMessageDialog(null, "OK");
+            telaAnterior.cCliente = cCliente;
             dispose();
         }
         
