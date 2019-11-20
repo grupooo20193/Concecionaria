@@ -4,11 +4,23 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/visualizarCarro.java</file>
-            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/concerssionariacarroos/Estoque.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/cadastrarFuncionario.java</file>
             <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/buscarCarro.java</file>
             <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/concerssionariacarroos/Carro.java</file>
-            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/cadastrarCaroo.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/concerssionariacarroos/Pagamento.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/telaEstoque.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/telaVendas.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/TelaGerente.java</file>
             <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/controle/ControleCarro.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/concerssionariacarroos/Estoque.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/TelaNovoCarro.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/TelaLogin.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/TelaLoginGerencia.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/telaPrincipal.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/concerssionariacarroos/APrazo.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/cadastrarCaroo.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/telas/telaGerencia.java</file>
+            <file>file:/C:/Users/walki/OneDrive/Documentos/GitHub/Concecionaria/src/concerssionariacarroos/AVista.java</file>
         </group>
     </open-files>
 </project-private>

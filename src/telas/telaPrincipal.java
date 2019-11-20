@@ -41,6 +41,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         botaoSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela Principal");
 
         botaoVendas.setText("Venda");
         botaoVendas.addActionListener(new java.awt.event.ActionListener() {

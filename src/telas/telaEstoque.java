@@ -40,6 +40,7 @@ public class telaEstoque extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela de Estoque");
 
         botaoVoltar.setText("voltar");
         botaoVoltar.addActionListener(new java.awt.event.ActionListener() {

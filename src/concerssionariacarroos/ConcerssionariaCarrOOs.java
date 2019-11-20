@@ -1,7 +1,6 @@
 
 package concerssionariacarroos;
 
-import telas.TelaGerente;
 import telas.TelaLogin;
 
 
