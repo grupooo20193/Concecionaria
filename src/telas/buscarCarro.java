@@ -362,7 +362,9 @@ public class buscarCarro extends javax.swing.JFrame {
 
     private void botaoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelarActionPerformed
         // TODO add your handling code here:
+        telaAnterior.setEnabled(true);
         this.dispose();
+        
     }//GEN-LAST:event_botaoCancelarActionPerformed
 
     private void botaoConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConcluirActionPerformed

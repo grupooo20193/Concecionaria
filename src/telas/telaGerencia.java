@@ -102,8 +102,7 @@ public class telaGerencia extends javax.swing.JFrame {
         cadastrarFuncionario cf = new cadastrarFuncionario(this);
         cf.setVisible(true);
         cf.setSize(800,600);
-        cf
-                .setResizable(false);
+        cf.setResizable(false);
         this.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
