@@ -1,22 +1,26 @@
 
 package concerssionariacarroos;
 
-import java.util.Scanner;
-import sun.security.jgss.GSSUtil;
-
 
 public class Funcionario {
      
     private String idFuncionario;
     private String nomeFuncionario;
-    private String usuarioFuncionario;
+    private String cargoFuncionario;
     private String senhaFuncionario;
    // BancoDeDadosFuncionario bancoDeDadosFuncionario = new BancoDeDadosFuncionario();
     
+    /**
+     * Construtor da classe 
+     * @param id cpf do funcionario String
+     * @param nome nome do funcionario String
+     * @param usuario cargo do funcionario String
+     * @param senha sehna para logar no sistema String
+     */
     public Funcionario(String id, String nome, String usuario, String senha){
         this.idFuncionario = id;
         this.nomeFuncionario = nome;
-        this.usuarioFuncionario = usuario;
+        this.cargoFuncionario = usuario;
         this.senhaFuncionario = senha;
     }
 
@@ -37,11 +41,11 @@ public class Funcionario {
     }
 
     public String getUsuarioFuncionario() {
-        return usuarioFuncionario;
+        return cargoFuncionario;
     }
 
     public void setUsuarioFuncionario(String usuarioFuncionario) {
-        this.usuarioFuncionario = usuarioFuncionario;
+        this.cargoFuncionario = usuarioFuncionario;
     }
 
     public String getSenhaFuncionario() {
