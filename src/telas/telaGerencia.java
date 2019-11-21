@@ -5,7 +5,12 @@
  */
 package telas;
 
+import concerssionariacarroos.Funcionario;
+import controle.ControleFuncionario;
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,16 +19,37 @@ import javax.swing.JFrame;
 public class telaGerencia extends javax.swing.JFrame {
     
     JFrame telaAnterior;
+    DefaultTableModel model;
+    ControleFuncionario cFuncionario = new ControleFuncionario();
+    ArrayList<Funcionario> funcs;
     /**
      * Creates new form telaGerencia
      */
     private telaGerencia() {
         initComponents();
+        
+        this.funcs = this.cFuncionario.getFuncionarios();
+        
+        model = (DefaultTableModel) this.tabelaFuncionarios.getModel();
+        
+        atualizatabela(funcs);
+        
     }
     
     public telaGerencia(JFrame telaAnterior){
         this();
         this.telaAnterior = telaAnterior;
+        
+    }
+    
+    private void atualizatabela(ArrayList<Funcionario> funcs){
+        Object[] linha = null;
+        
+        for (int i=0; i<funcs.size();i++){
+                model.addRow(linha);
+                this.tabelaFuncionarios.setValueAt(funcs.get(i).getNomeFuncionario(), i, 0);
+                this.tabelaFuncionarios.setValueAt(funcs.get(i).getIdFuncionario(), i, 1);
+            }
     }
 
     /**
@@ -35,76 +61,138 @@ public class telaGerencia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botaoVoltar = new javax.swing.JButton();
+        botaoCadastrarFuncionario = new javax.swing.JButton();
+        botaoAlterarLogin = new javax.swing.JButton();
+        botaoRemoverFuncionario = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaFuncionarios = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Gerência");
 
-        jButton1.setText("Voltar");
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
+
+        botaoCadastrarFuncionario.setText("Cadastrar funcionario");
+        botaoCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrarFuncionarioActionPerformed(evt);
+            }
+        });
+
+        botaoAlterarLogin.setText("Alterar login");
+
+        botaoRemoverFuncionario.setText("Remover funcionario");
+        botaoRemoverFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoRemoverFuncionarioActionPerformed(evt);
+            }
+        });
+
+        tabelaFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "CPF"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabelaFuncionarios);
+
+        jButton1.setText("Atualizar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Cadastrar funcionario");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Alterar login");
-
-        jButton4.setText("Remover funcionario");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(546, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botaoCadastrarFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoAlterarLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoRemoverFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(99, 99, 99))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(162, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(botaoAlterarLogin)
                 .addGap(92, 92, 92)
-                .addComponent(jButton4)
-                .addGap(87, 87, 87)
-                .addComponent(jButton2)
-                .addGap(91, 91, 91)
+                .addComponent(botaoRemoverFuncionario)
+                .addGap(27, 27, 27)
                 .addComponent(jButton1)
+                .addGap(31, 31, 31)
+                .addComponent(botaoCadastrarFuncionario)
+                .addGap(91, 91, 91)
+                .addComponent(botaoVoltar)
                 .addGap(68, 68, 68))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
         telaAnterior.setEnabled(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botaoCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
         cadastrarFuncionario cf = new cadastrarFuncionario(this);
         cf.setVisible(true);
         cf.setSize(800,600);
         cf.setResizable(false);
         this.setEnabled(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botaoCadastrarFuncionarioActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        funcs.clear();
+        this.funcs = this.cFuncionario.getFuncionarios();
+        atualizatabela(funcs);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botaoRemoverFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverFuncionarioActionPerformed
+        // TODO add your handling code here:
+        try{
+            model.removeRow(this.tabelaFuncionarios.getSelectedRow());
+            //chama um funcao na classe de controle que remove um funcionario 
+            cFuncionario.removeFuncionario(funcs.get(this.tabelaFuncionarios.getSelectedRow()));
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null,"Nenhuma linha selecionada para exclusão!");
+        }
+        
+    }//GEN-LAST:event_botaoRemoverFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,9 +230,12 @@ public class telaGerencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoAlterarLogin;
+    private javax.swing.JButton botaoCadastrarFuncionario;
+    private javax.swing.JButton botaoRemoverFuncionario;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabelaFuncionarios;
     // End of variables declaration//GEN-END:variables
 }

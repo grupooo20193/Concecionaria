@@ -52,9 +52,9 @@ public class telaVendas extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botaoInserirCliente = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        botaoBuscarCarro = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -64,7 +64,7 @@ public class telaVendas extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         botaoPoximo = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botaoVisualisarCliente = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
@@ -94,17 +94,22 @@ public class telaVendas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         jLabel4.setText("Cliente:");
 
-        jButton1.setText("Inserir Cliente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoInserirCliente.setText("Inserir Cliente");
+        botaoInserirCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoInserirClienteActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
         jLabel5.setText("Carro:");
 
-        jButton2.setText("Buscar Carro");
+        botaoBuscarCarro.setText("Buscar Carro");
+        botaoBuscarCarro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoBuscarCarroActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Marca:");
 
@@ -140,10 +145,10 @@ public class telaVendas extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Visualisar Cliente");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botaoVisualisarCliente.setText("Visualisar Cliente");
+        botaoVisualisarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botaoVisualisarClienteActionPerformed(evt);
             }
         });
 
@@ -163,12 +168,6 @@ public class telaVendas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoPoximo)
-                .addGap(18, 18, 18)
-                .addComponent(botaoCancelar)
-                .addGap(11, 11, 11))
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,49 +181,54 @@ public class telaVendas extends javax.swing.JFrame {
                                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(127, 127, 127)
-                                .addComponent(jButton1)
+                                .addComponent(botaoInserirCliente)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botaoVisualisarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(31, 31, 31)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(botaoPoximo)
+                                .addGap(46, 46, 46)
+                                .addComponent(botaoCancelar))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(jLabel5)
-                                    .addGap(60, 60, 60)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel8))
-                                    .addGap(94, 94, 94)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGap(39, 39, 39)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel9))
-                                    .addGap(85, 85, 85)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel3))
-                                    .addGap(96, 96, 96)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jLabel2)))
+                                    .addComponent(jLabel13)
+                                    .addGap(31, 31, 31)
+                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel5)
+                                        .addGap(60, 60, 60)
+                                        .addComponent(botaoBuscarCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel8))
+                                        .addGap(94, 94, 94)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(39, 39, 39)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel9))
+                                        .addGap(85, 85, 85)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel3))
+                                        .addGap(96, 96, 96)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel2))))
                         .addContainerGap(52, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -245,12 +249,12 @@ public class telaVendas extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jButton1)
-                            .addComponent(jButton3))
+                            .addComponent(botaoInserirCliente)
+                            .addComponent(botaoVisualisarCliente))
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
-                            .addComponent(jButton2))
+                            .addComponent(botaoBuscarCarro))
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -299,14 +303,14 @@ public class telaVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
                
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoInserirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoInserirClienteActionPerformed
         // TODO add your handling code here:
         telaCadastroCliente tcc = new telaCadastroCliente(this);
         tcc.setVisible(true);
         tcc.setResizable(false);
         //jScrollPane1 = new JScrollPane(new clienteInfo(cCliente));
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoInserirClienteActionPerformed
 
     private void botaoPoximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPoximoActionPerformed
         // TODO add your handling code here:
@@ -315,13 +319,23 @@ public class telaVendas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Venda Realizada!");
     }//GEN-LAST:event_botaoPoximoActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botaoVisualisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualisarClienteActionPerformed
         // TODO add your handling code here:
         VisualisarCliente vc = new VisualisarCliente(this, cCliente);
         vc.setVisible(true);
         vc.setResizable(false);
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botaoVisualisarClienteActionPerformed
+
+    private void botaoBuscarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarCarroActionPerformed
+        // TODO add your handling code here:
+        buscarCarro bc = new buscarCarro(this);
+        
+        bc.setVisible(true);
+      
+        bc.setResizable(false);
+        this.setEnabled(false);
+    }//GEN-LAST:event_botaoBuscarCarroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -359,11 +373,11 @@ public class telaVendas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoBuscarCarro;
     private javax.swing.JButton botaoCancelar;
+    private javax.swing.JButton botaoInserirCliente;
     private javax.swing.JButton botaoPoximo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton botaoVisualisarCliente;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

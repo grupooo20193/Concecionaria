@@ -5,18 +5,18 @@ import java.util.ArrayList;
 
 public class BancoDeDadosFuncionario {
     private Gerente gerente;
-    private ArrayList<Vendedor> vendedores = new ArrayList<>();
+    private ArrayList<Funcionario> funcionarios = new ArrayList<>();
     
-    public void adicionaFuncionario(Vendedor e){
-        vendedores.add(e);
+    public void adicionaFuncionario(Funcionario e){
+        funcionarios.add(e);
     }
     
     public int quantidadeVendedores(){
-        return vendedores.size();
+        return funcionarios.size();
     }
 
-    public void deletaVendedor(Vendedor vendedor){
-        vendedores.remove(vendedor);
+    public void deletaVendedor(Funcionario f){
+        funcionarios.remove(f);
     }
 
     public Gerente getGerente() {
@@ -24,7 +24,7 @@ public class BancoDeDadosFuncionario {
     }
 
     public Vendedor getVendedores(int posicao) {
-        return vendedores.get(posicao);
+        return (Vendedor) funcionarios.get(posicao);
     }
     
     

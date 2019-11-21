@@ -172,7 +172,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         String senha = this.campoSenha.getText().trim();
         
         ControleFuncionario cf = new ControleFuncionario(nome, cargo, cpf, senha);
-        cf.criaFuncionario();
+        //cf.criaFuncionarios();
         telaAnterior.setEnabled(true);
         dispose();  
  

@@ -7,24 +7,24 @@ import sun.security.jgss.GSSUtil;
 
 public class Funcionario {
      
-    private int idFuncionario;
+    private String idFuncionario;
     private String nomeFuncionario;
     private String usuarioFuncionario;
     private String senhaFuncionario;
-    BancoDeDadosFuncionario bancoDeDadosFuncionario = new BancoDeDadosFuncionario();
+   // BancoDeDadosFuncionario bancoDeDadosFuncionario = new BancoDeDadosFuncionario();
     
     public Funcionario(String id, String nome, String usuario, String senha){
-        this.idFuncionario = idFuncionario;
+        this.idFuncionario = id;
         this.nomeFuncionario = nome;
         this.usuarioFuncionario = usuario;
         this.senhaFuncionario = senha;
     }
 
-    public int getIdFuncionario() {
+    public String getIdFuncionario() {
         return idFuncionario;
     }
 
-    public void setIdFuncionario(int idFuncionario) {
+    public void setIdFuncionario(String idFuncionario) {
         this.idFuncionario = idFuncionario;
     }
 
@@ -54,12 +54,12 @@ public class Funcionario {
 
     
     
-    public void retornaFuncionarios(){
+   /* public void retornaFuncionarios(){
         for(int i=0; i < bancoDeDadosFuncionario.quantidadeVendedores(); i++){
             System.out.println(bancoDeDadosFuncionario.getVendedores(i).getNomeFuncionario());
             System.out.println("");
         }
         System.out.println(bancoDeDadosFuncionario.getGerente());
-    }  
+    }  */
      
 }
