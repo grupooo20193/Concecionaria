@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class BancoDeDadosFuncionario {
     private Gerente gerente;
-private ArrayList<Vendedor> vendedores = new ArrayList<>();
+    private ArrayList<Vendedor> vendedores = new ArrayList<>();
     
     public void adicionaFuncionario(Vendedor e){
         vendedores.add(e);

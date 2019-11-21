@@ -11,6 +11,15 @@ public class Carro {
     private String anoCarro;
     private float valorCarro;
     
+    public Carro(){
+        
+    }
+    public Carro(String marcaCarro, String modeloCarro, String anoCarro, float valorCarro){
+        this.anoCarro = anoCarro;
+        this.marcaCarro = marcaCarro;
+        this.modeloCarro = modeloCarro;
+        this.valorCarro = valorCarro;
+    }
 
     public int getIdCarro() {
         return idCarro;

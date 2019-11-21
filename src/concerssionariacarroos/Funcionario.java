@@ -2,6 +2,7 @@
 package concerssionariacarroos;
 
 import java.util.Scanner;
+import sun.security.jgss.GSSUtil;
 
 
 public class Funcionario {
@@ -12,7 +13,12 @@ public class Funcionario {
     private String senhaFuncionario;
     BancoDeDadosFuncionario bancoDeDadosFuncionario = new BancoDeDadosFuncionario();
     
-    
+    public Funcionario(String id, String nome, String usuario, String senha){
+        this.idFuncionario = idFuncionario;
+        this.nomeFuncionario = nome;
+        this.usuarioFuncionario = usuario;
+        this.senhaFuncionario = senha;
+    }
 
     public int getIdFuncionario() {
         return idFuncionario;

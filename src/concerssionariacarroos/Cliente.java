@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -13,49 +14,73 @@ package concerssionariacarroos;
 public class Cliente {
     private int idCliente;
     private String nomeCliente;
+=======
+package concerssionariacarroos;
+
+public abstract class Cliente {
+ 
+    private String identificacaoCliente;
+>>>>>>> W
     private String telefoneCliente;
+    private String celularCliente;
     private String enderecoCliente;
     private String estadoCliente;
     private String cidadeCliente;
     private String cepCliente;
-    private Venda venda;
+    private String documentoCliente;
 
     
     public Cliente(){}
     
-    public  Cliente(String nomeCliente, String telefoneCliente, String enderecoCliente, String estadoCliente, String cepCliente, String cidadeCliente, Venda venda){
-        this.nomeCliente = nomeCliente;
+    public  Cliente(String identificacaoCliente, String telefoneCliente,String celularCliente, String enderecoCliente, String estadoCliente, String cepCliente, String cidadeCliente, String documentoCliente){
+        this.identificacaoCliente = identificacaoCliente;
         this.telefoneCliente = telefoneCliente;
+        this.celularCliente = celularCliente;
         this.enderecoCliente = enderecoCliente;
         this.estadoCliente = estadoCliente;
         this.cepCliente = cepCliente;
         this.cidadeCliente = cidadeCliente;
-        this.venda = venda;
+        this.documentoCliente = documentoCliente;
     }
 
-    public Venda getVenda() {
-        return venda;
+    public boolean verificaEndereco(String endereco){
+        if(endereco.isEmpty())
+            return false;
+        else
+            return true;
+    }
+    public boolean verificaCep(String cep){
+        if(cep.isEmpty())
+            return false;
+        else
+            return true;
+    }
+    public boolean verificaCidade(String cidade){
+        if(cidade.isEmpty())
+            return false;
+        else
+            return true;
+    }
+    
+    public abstract boolean verificaIdentificacao(String identificacao);
+    
+    public abstract boolean verificaDocumento(String documento);
+    
+    public String getCelularCliente() {
+        return celularCliente;
     }
 
-    public void setVenda(Venda venda) {
-        this.venda = venda;
+    public void setCelularCliente(String celularCliente) {
+        this.celularCliente = celularCliente;
     }
 
-    public int getIdCliente() {
-        return idCliente;
-    }
+    public abstract String getIdentificacaoCliente(); 
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
+    public abstract void setIdentificacaoCliente(String identificacaoCliente); 
 
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
+    public abstract String getDocumentoCliente();
+            
+    public abstract void setDocumentoCliente(String documentoCliente);
 
     public String getTelefoneCliente() {
         return telefoneCliente;

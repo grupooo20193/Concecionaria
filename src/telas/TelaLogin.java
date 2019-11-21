@@ -50,6 +50,7 @@ public class TelaLogin extends javax.swing.JFrame {
         labelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de Ligin");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelEsqueciSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -62,7 +63,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         botaoEsqueciSenha.setForeground(new java.awt.Color(255, 153, 153));
         botaoEsqueciSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/form.png"))); // NOI18N
-        botaoEsqueciSenha.setActionCommand("");
         botaoEsqueciSenha.setBorder(null);
         botaoEsqueciSenha.setBorderPainted(false);
         botaoEsqueciSenha.setContentAreaFilled(false);
@@ -94,7 +94,6 @@ public class TelaLogin extends javax.swing.JFrame {
         botaoAjuda.setBorder(null);
         botaoAjuda.setBorderPainted(false);
         botaoAjuda.setContentAreaFilled(false);
-        botaoAjuda.setOpaque(false);
         getContentPane().add(botaoAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 230, -1));
 
         campoUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -154,8 +153,8 @@ public class TelaLogin extends javax.swing.JFrame {
        String senha = this.campoSenha.getText().trim();
        
        if(cl.VerificaLogin(usuario, senha) == true){
-            TelaGerente tt = new TelaGerente(this);
-            tt.setVisible(true);
+            telaPrincipal tp = new telaPrincipal(this);
+            tp.setVisible(true);
             this.dispose();
        } 
        else{

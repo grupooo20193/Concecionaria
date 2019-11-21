@@ -6,6 +6,8 @@
 package controle;
 
 import concerssionariacarroos.Carro;
+import concerssionariacarroos.Estoque;
+import concerssionariacarroos.ModelosCarros;
 import static java.lang.System.exit;
 import java.util.ArrayList;
 
@@ -20,32 +22,81 @@ public class ControleCarro {
     String modeloCarro;
     String anoCarro;
     float valorCarro;
+    ModelosCarros modeloscarros;
+    private Estoque estoque = new Estoque();;
     
+    public ControleCarro(){
+        modeloscarros = new ModelosCarros();
+        erros = new ArrayList<>();
+        
+        
+    }
     public ControleCarro(String marcaCarro, String modeloCarro, String anoCarro, float valorCarro){
         this.c = new Carro();
         erros = new ArrayList<>();
+        
         this.marcaCarro = marcaCarro;
         this.modeloCarro = modeloCarro;
         this.anoCarro = anoCarro;
         this.valorCarro = valorCarro;
+        
+        
+    }
+
+    public String getMarcaCarro() {
+        return marcaCarro;
+    }
+
+    public void setMarcaCarro(String marcaCarro) {
+        this.marcaCarro = marcaCarro;
+    }
+
+    public String getModeloCarro() {
+        return modeloCarro;
+    }
+
+    public void setModeloCarro(String modeloCarro) {
+        this.modeloCarro = modeloCarro;
+    }
+
+    public String getAnoCarro() {
+        return anoCarro;
+    }
+
+    public void setAnoCarro(String anoCarro) {
+        this.anoCarro = anoCarro;
+    }
+
+    public float getValorCarro() {
+        return valorCarro;
+    }
+
+    public void setValorCarro(float valorCarro) {
+        this.valorCarro = valorCarro;
     }
     
-    public void novoCarro(String marcaCarro, String modeloCarro, String anoCarro, float valorCarro){
+    
+    //este metodo retorna um arraylist de modelos para setar o combobox do campo modelo
+    public ArrayList<String> getModelos(String marca){
+        System.out.println("foi em controle");
+        ArrayList<String> modelos;
+        modelos = modeloscarros.getModelo(marca);
+        return modelos;
+    }
+    
+    public void novoCarro(){
         c.setMarcaCarro(marcaCarro);
         c.setModeloCarro(modeloCarro);
         c.setAnoCarro(anoCarro);
         c.setValorCarro(valorCarro);
+        estoque.getEstoque().add(c);
+        
+        
         
     }
     
-    public void verificaInfo(){
-        verificaMarca();
-        verificaModelo();
-        verificaAno();
-        verificaValor();
-    }
         
-    public void verificaMarca(){
+    /*public void verificaMarca(){
         if(marcaCarro.isEmpty() == true){
             getErros().add("Campo marca vazio.");
         }
@@ -67,7 +118,7 @@ public class ControleCarro {
                 exit(0);
             }
         }    
-    }
+    }*/
     
     public void verificaAno(){
         if(anoCarro.isEmpty() == true){
@@ -81,7 +132,7 @@ public class ControleCarro {
         }
     }
      
-    public void verificaValor(){
+    public void verificaValor(float valor){
         if(valorCarro < 0){
             getErros().add("Valor inválido.");
         }
@@ -92,6 +143,14 @@ public class ControleCarro {
      */
     public ArrayList<String> getErros() {
         return erros;
+    }
+
+    /**
+     * @return the estoque
+     */
+    public Estoque getEstoque() {
+        System.out.println("pegou estoque");
+        return estoque;
     }
     
    
