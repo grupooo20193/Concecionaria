@@ -7,20 +7,17 @@ package telas;
 
 import concerssionariacarroos.Carro;
 import controle.ControleCarro;
-import controle.ControleVenda;
 import java.util.ArrayList;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /**
  *
  * @author walki
  */
-public class buscarCarro extends javax.swing.JFrame {
+public class buscarCarrovenda extends javax.swing.JFrame {
     
-    JFrame telaAnterior;
+    telaVendas telaAnterior;
     ControleCarro cCarro = new ControleCarro();
     int opcao;
     DefaultTableModel model;
@@ -28,16 +25,16 @@ public class buscarCarro extends javax.swing.JFrame {
     /**
      * Creates new form buscarCarro
      */
-    private buscarCarro() {
+    private buscarCarrovenda() {
         initComponents();
         this.campoMarca.setEnabled(false);
         this.campoAno.setEnabled(false);
         model = (DefaultTableModel) this.jTable1.getModel();
     }
-    public buscarCarro(telaVendas telaAnterior,ControleCarro cCarro){
+    
+    public buscarCarrovenda(telaVendas telaAnterior){
         this();
         this.telaAnterior = telaAnterior;
-        this.cCarro = cCarro;
          
        
     }
@@ -371,6 +368,9 @@ public class buscarCarro extends javax.swing.JFrame {
 
     private void botaoConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConcluirActionPerformed
         // TODO add your handling code here:
+       
+        telaAnterior.setCarro(encontrados.get(this.jTable1.getSelectedRow()));
+        telaAnterior.setEnabled(true);
         this.dispose();
     }//GEN-LAST:event_botaoConcluirActionPerformed
 
@@ -401,20 +401,21 @@ public class buscarCarro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(buscarCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(buscarCarrovenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(buscarCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(buscarCarrovenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(buscarCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(buscarCarrovenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(buscarCarro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(buscarCarrovenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new buscarCarro().setVisible(true);
+                new buscarCarrovenda().setVisible(true);
             }
         });
     }

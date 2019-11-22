@@ -112,18 +112,6 @@ public class ControleCliente {
     }
 
     public Cliente getCliente() {
-        return cliente;
-    }
-
-//    public void setCliente(Cliente cliente) {
-//        this.cliente = cliente;
-//    }
-    
-    private void setCliente(ControleCliente cCliente){
-         }
-    
-    public boolean verificaInfo(){
-        boolean b = true;
         if(this.opcao == 1){
             this.cliente = new pessoaFisica(identificacaoCliente, telefoneCliente, celularCliente, enderecoCliente, estadoCliente, cepCliente, cidadeCliente, documentoCliente);
         
@@ -131,7 +119,17 @@ public class ControleCliente {
         }
         else
             this.cliente = new pessoaJuridica(identificacaoCliente, documentoCliente, telefoneCliente, celularCliente, enderecoCliente, estadoCliente,cepCliente, cidadeCliente);
-           b = cliente.verificaCep(this.cepCliente);
+       
+        return cliente;
+    }
+
+    
+    public boolean verificaInfo(){
+        getCliente();
+        boolean b = true;
+        
+        
+        b = cliente.verificaCep(this.cepCliente);
         if(b == false){
             return b;
         }
@@ -153,6 +151,7 @@ public class ControleCliente {
         }
         return b;
        
+        
     }
     
 }

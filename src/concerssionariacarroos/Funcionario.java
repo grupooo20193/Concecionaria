@@ -23,15 +23,27 @@ public class Funcionario {
         this.cargoFuncionario = usuario;
         this.senhaFuncionario = senha;
     }
-
+    
+    /**
+     * Retorna o ID do funcionario, sendo este o cpf
+     * @return idFuncionario String
+     */
     public String getIdFuncionario() {
         return idFuncionario;
     }
-
+    
+    /**
+     * Altera o id do funcionario
+     * @param idFuncionario id do funcionario
+     */
     public void setIdFuncionario(String idFuncionario) {
         this.idFuncionario = idFuncionario;
     }
-
+    
+    /**
+     * Retorna o nome do funcionario
+     * @return nomeFuncionario String
+     */
     public String getNomeFuncionario() {
         return nomeFuncionario;
     }

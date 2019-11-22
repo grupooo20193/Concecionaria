@@ -10,6 +10,8 @@ import controle.ControleFuncionario;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -87,6 +89,11 @@ public class telaGerencia extends javax.swing.JFrame {
         });
 
         botaoAlterarLogin.setText("Alterar login");
+        botaoAlterarLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoAlterarLoginActionPerformed(evt);
+            }
+        });
 
         botaoRemoverFuncionario.setText("Remover funcionario");
         botaoRemoverFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -193,6 +200,17 @@ public class telaGerencia extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_botaoRemoverFuncionarioActionPerformed
+
+    private void botaoAlterarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarLoginActionPerformed
+        // TODO add your handling code here:
+        try{
+            String novaSenha = JOptionPane.showInputDialog(null, "Nova Senha: ");
+            cFuncionario.getFuncionarios().get(tabelaFuncionarios.getSelectedRow()).setSenhaFuncionario(novaSenha);
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null,"Nenhuma linha selecionada para alteração!");
+        }
+    }//GEN-LAST:event_botaoAlterarLoginActionPerformed
 
     /**
      * @param args the command line arguments

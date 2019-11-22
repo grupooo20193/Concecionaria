@@ -18,6 +18,7 @@ import javax.swing.text.MaskFormatter;
  */
 public class cadastrarFuncionario extends javax.swing.JFrame {
     JFrame telaAnterior;
+    ControleFuncionario cf = new ControleFuncionario();
     /**
      * Creates new form cadastrarCaroo
      */
@@ -28,6 +29,12 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
     public cadastrarFuncionario(JFrame telaAnterior){
         this();
         this.telaAnterior = telaAnterior;
+    }
+    
+    public cadastrarFuncionario(JFrame telaAnterior, ControleFuncionario cf){
+        this();
+        this.telaAnterior = telaAnterior;
+        this.cf = cf;
     }
 
     /**
@@ -172,7 +179,7 @@ public class cadastrarFuncionario extends javax.swing.JFrame {
         String senha = this.campoSenha.getText().trim();
         
         ControleFuncionario cf = new ControleFuncionario(nome, cargo, cpf, senha);
-        //cf.criaFuncionarios();
+        //cf.criaFuncionario();
         telaAnterior.setEnabled(true);
         dispose();  
  

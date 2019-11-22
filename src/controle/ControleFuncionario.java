@@ -6,10 +6,8 @@
 package controle;
 
 import concerssionariacarroos.BancoDeDadosFuncionario;
-import concerssionariacarroos.Estoque;
 import concerssionariacarroos.Funcionario;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,10 +15,10 @@ import javax.swing.JOptionPane;
  */
 public class ControleFuncionario {
     
-    String nome;
-    String cargo;
-    String cpf;
-    String senha;
+    private String nome;
+    private String cargo;
+    private String cpf;
+    private String senha;
     ArrayList<Funcionario> funcionarios = new ArrayList<>();
     BancoDeDadosFuncionario b;
     
@@ -63,14 +61,17 @@ public class ControleFuncionario {
     public void setFuncinarios(ArrayList<Funcionario> funcionarios){
         this.funcionarios = funcionarios;
     }
-    
-   public void criaFuncionario(){
+   
+    /* Utilizada no lugar de criaFUncionarios
+    public void criaFuncionario(){
         if(verificaInfo()==true){
         funcionario = new Funcionario(cpf, nome, cargo, senha);
+        b.adicionaFuncionario(funcionario);
         }
         else
             JOptionPane.showMessageDialog(null, "Erro");
     }
+    */
    
     public boolean verificaInfo(){
         if (nome.isEmpty()){
@@ -87,5 +88,6 @@ public class ControleFuncionario {
 
     public void removeFuncionario(Funcionario funcionario) {
         b.deletaVendedor(funcionario);
-    }        
+    }
+    
 }

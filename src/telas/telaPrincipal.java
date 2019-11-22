@@ -119,7 +119,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         telaVendas tv = new telaVendas(this);
         tv.setVisible(true);
-        tv.setSize(800, 600);
+        //tv.setSize(800, 600);
         tv.setResizable(false);
         this.setEnabled(false);
     }//GEN-LAST:event_botaoVendasActionPerformed

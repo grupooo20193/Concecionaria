@@ -5,7 +5,12 @@
  */
 package telas;
 
+import concerssionariacarroos.Carro;
+import concerssionariacarroos.Cliente;
+import concerssionariacarroos.Venda;
+import controle.ControleCarro;
 import controle.ControleCliente;
+import controle.ControleVenda;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -19,6 +24,8 @@ public class telaVendas extends javax.swing.JFrame {
 
     JFrame telaAnterior;
     ControleCliente cCliente;
+    Carro carro = new Carro();
+    
     /**
      * Creates new form telaVendas
      */
@@ -34,6 +41,15 @@ public class telaVendas extends javax.swing.JFrame {
     public void setControleCliente(ControleCliente cCliente){
         this.cCliente = cCliente;
     }
+    
+    public void setCarro(Carro carro){
+        this.carro = carro;
+        this.campoMarca.setText(carro.getMarcaCarro());
+        this.campoModelo.setText(carro.getModeloCarro());
+        this.campoAno.setText(carro.getAnoCarro());
+        this.campoValor.setText(carro.getValorCarro()+"");
+    }
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,8 +65,8 @@ public class telaVendas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        campoCPFvendedor = new javax.swing.JTextField();
+        campoVendedor = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         botaoInserirCliente = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -59,10 +75,10 @@ public class telaVendas extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        campoModelo = new javax.swing.JTextField();
+        campoMarca = new javax.swing.JTextField();
+        campoAno = new javax.swing.JTextField();
+        campoValor = new javax.swing.JTextField();
         botaoPoximo = new javax.swing.JButton();
         botaoVisualisarCliente = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -120,21 +136,21 @@ public class telaVendas extends javax.swing.JFrame {
         jLabel9.setText("Valor:");
         jLabel9.setToolTipText("");
 
-        jTextField4.setEditable(false);
+        campoModelo.setEditable(false);
 
-        jTextField5.setEditable(false);
+        campoMarca.setEditable(false);
 
-        jTextField6.setEditable(false);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        campoAno.setEditable(false);
+        campoAno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                campoAnoActionPerformed(evt);
             }
         });
 
-        jTextField7.setEditable(false);
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        campoValor.setEditable(false);
+        campoValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                campoValorActionPerformed(evt);
             }
         });
 
@@ -209,8 +225,8 @@ public class telaVendas extends javax.swing.JFrame {
                                             .addComponent(jLabel8))
                                         .addGap(94, 94, 94)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                            .addComponent(campoMarca, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                            .addComponent(campoAno, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(39, 39, 39)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,16 +234,16 @@ public class telaVendas extends javax.swing.JFrame {
                                             .addComponent(jLabel9))
                                         .addGap(85, 85, 85)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(campoValor, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(campoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel1)
                                             .addComponent(jLabel3))
                                         .addGap(96, 96, 96)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(campoCPFvendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(campoVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jLabel2))))
                         .addContainerGap(52, Short.MAX_VALUE))))
         );
@@ -241,11 +257,11 @@ public class telaVendas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoCPFvendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
@@ -258,16 +274,16 @@ public class telaVendas extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(campoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6))
                             .addComponent(jLabel7)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(57, 57, 57)
                         .addComponent(jLabel11))
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -295,13 +311,13 @@ public class telaVendas extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botaoCancelarActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void campoAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_campoAnoActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void campoValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoValorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_campoValorActionPerformed
                
     private void botaoInserirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoInserirClienteActionPerformed
         // TODO add your handling code here:
@@ -316,25 +332,36 @@ public class telaVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        JOptionPane.showMessageDialog(null, "Venda Realizada!");
+        Cliente cliente = cCliente.getCliente();
+        
+        ControleVenda venda = new ControleVenda(cliente, this.campoVendedor.getText(), carro);
+       
+        JOptionPane.showMessageDialog(null, "Venda enviada para API externa!");
+        dispose();
     }//GEN-LAST:event_botaoPoximoActionPerformed
 
     private void botaoVisualisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVisualisarClienteActionPerformed
         // TODO add your handling code here:
+        try{
         VisualisarCliente vc = new VisualisarCliente(this, cCliente);
         vc.setVisible(true);
         vc.setResizable(false);
+        } catch (NullPointerException e){
+            JOptionPane.showMessageDialog(null, "Nenhum cliente adicionado!");
+        }
         
     }//GEN-LAST:event_botaoVisualisarClienteActionPerformed
 
     private void botaoBuscarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarCarroActionPerformed
         // TODO add your handling code here:
-        buscarCarro bc = new buscarCarro(this);
-        
+        buscarCarrovenda bc = new buscarCarrovenda(this);
         bc.setVisible(true);
-      
         bc.setResizable(false);
         this.setEnabled(false);
+        
+        System.out.println(carro.getMarcaCarro()+"eita");
+        
+        
     }//GEN-LAST:event_botaoBuscarCarroActionPerformed
 
     /**
@@ -378,6 +405,12 @@ public class telaVendas extends javax.swing.JFrame {
     private javax.swing.JButton botaoInserirCliente;
     private javax.swing.JButton botaoPoximo;
     private javax.swing.JButton botaoVisualisarCliente;
+    private javax.swing.JTextField campoAno;
+    private javax.swing.JTextField campoCPFvendedor;
+    private javax.swing.JTextField campoMarca;
+    private javax.swing.JTextField campoModelo;
+    private javax.swing.JTextField campoValor;
+    private javax.swing.JTextField campoVendedor;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -394,12 +427,6 @@ public class telaVendas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

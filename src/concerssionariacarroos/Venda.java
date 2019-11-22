@@ -9,9 +9,9 @@ public class Venda {
     private Cliente cliente;
     private Vendedor vendedor;
     private Carro carro;
-    private Pagamento pagamento;
+    private ArrayList<String> pagamento;
 
-    public Venda(int idVendas, Cliente cliente, Vendedor vendedor, Carro carro, Pagamento pagamento) {
+    public Venda(int idVendas, Cliente cliente, Vendedor vendedor, Carro carro,ArrayList<String> pagamento) {
         this.idVendas = idVendas;
         this.cliente = cliente;
         this.vendedor = vendedor;
@@ -51,11 +51,11 @@ public class Venda {
         this.carro = carro;
     }
 
-    public Pagamento getPagamento() {
+    public ArrayList<String> getPagamento() {
         return pagamento;
     }
 
-    public void setPagamento(Pagamento pagamento) {
+    public void setPagamento(ArrayList<String> pagamento) {
         this.pagamento = pagamento;
     }
    
