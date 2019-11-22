@@ -7,6 +7,8 @@ public abstract class Pagamento {
     private int idPagamento;
     private Date dataPagamento;
     private Venda venda;
+    
+    
 
     public int getIdPagamento() {
         return idPagamento;

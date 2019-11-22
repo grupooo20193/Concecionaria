@@ -34,10 +34,9 @@ public class buscarCarro extends javax.swing.JFrame {
         this.campoAno.setEnabled(false);
         model = (DefaultTableModel) this.jTable1.getModel();
     }
-    public buscarCarro(telaVendas telaAnterior,ControleCarro cCarro){
+    public buscarCarro(JFrame telaAnterior){
         this();
         this.telaAnterior = telaAnterior;
-        this.cCarro = cCarro;
          
        
     }

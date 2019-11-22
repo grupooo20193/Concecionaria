@@ -11,6 +11,7 @@ import concerssionariacarroos.Venda;
 import controle.ControleCarro;
 import controle.ControleCliente;
 import controle.ControleVenda;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -334,7 +335,12 @@ public class telaVendas extends javax.swing.JFrame {
         
         Cliente cliente = cCliente.getCliente();
         
-        ControleVenda venda = new ControleVenda(cliente, this.campoVendedor.getText(), carro);
+        ArrayList<String> pagamento = new ArrayList<>();
+        pagamento.add(this.jComboBox1.getSelectedItem().toString());
+        pagamento.add(this.jComboBox2.getSelectedItem().toString());
+        pagamento.add(this.jComboBox3.getSelectedItem().toString());
+        
+        ControleVenda venda = new ControleVenda(cliente, this.campoVendedor.getText(), carro,pagamento);
        
         JOptionPane.showMessageDialog(null, "Venda enviada para API externa!");
         dispose();

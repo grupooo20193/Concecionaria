@@ -33,8 +33,9 @@ public class ControleVenda {
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.carro = carro;
+        this.pagamento = pagamento;
         
-        Venda venda = new Venda(cliente, vendedor, carro,ArrayList<String> pagamento);
+        Venda venda = new Venda(cliente, vendedor, carro, pagamento);
     }
     
     

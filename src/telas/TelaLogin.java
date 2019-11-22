@@ -98,7 +98,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         campoUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         campoUsuario.setForeground(new java.awt.Color(153, 153, 153));
-        campoUsuario.setText("Entre com seu usuário...");
         campoUsuario.setBorder(null);
         campoUsuario.setOpaque(false);
         campoUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +109,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         campoSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         campoSenha.setForeground(new java.awt.Color(153, 153, 153));
-        campoSenha.setText("Entre com sua senha...");
         campoSenha.setBorder(null);
         campoSenha.setOpaque(false);
         getContentPane().add(campoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 250, 30));

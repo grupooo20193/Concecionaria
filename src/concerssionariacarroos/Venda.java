@@ -5,27 +5,19 @@ import concerssionariacarroos.Cliente;
 import java.util.ArrayList;
 
 public class Venda {
-    private int idVendas;
     private Cliente cliente;
-    private Vendedor vendedor;
+    private String vendedor;
     private Carro carro;
     private ArrayList<String> pagamento;
 
-    public Venda(int idVendas, Cliente cliente, Vendedor vendedor, Carro carro,ArrayList<String> pagamento) {
-        this.idVendas = idVendas;
+    public Venda(Cliente cliente, String vendedor, Carro carro,ArrayList<String> pagamento) {
+
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.carro = carro;
         this.pagamento = pagamento;
     }
 
-    public int getIdVendas() {
-        return idVendas;
-    }
-
-    public void setIdVendas(int idVendas) {
-        this.idVendas = idVendas;
-    }
 
     public Cliente getCliente() {
         return cliente;
@@ -35,11 +27,11 @@ public class Venda {
         this.cliente = cliente;
     }
 
-    public Vendedor getVendedor() {
+    public String getVendedor() {
         return vendedor;
     }
 
-    public void setVendedor(Vendedor vendedor) {
+    public void setVendedor(String vendedor) {
         this.vendedor = vendedor;
     }
 
